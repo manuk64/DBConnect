@@ -1,7 +1,9 @@
+package main.java.com.example.myrepo;
+
 import java.sql.ResultSet;
 
-public class Main {
-    public static void main() throws Exception {
+public class DBConnect {
+    public static void main(String[] args) throws Exception {
         ResultSet _rs;
         Database _db = new Database();
         _db.connettiDatabase();
@@ -11,5 +13,6 @@ public class Main {
         System.out.println(name);
         _rs.close();
         _db.chiudiTutto();
+        System.out.println("Connessione chiusa!");
     }
 }

@@ -1,10 +1,10 @@
+package main.java.com.example.myrepo;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
 
 public class Database {
     private Statement _comando;
@@ -18,8 +18,8 @@ public class Database {
 
     public void connettiDatabase() throws Exception {
         // Read Resource data from Initial Context
-        String url = "jdbc:oracle:thin:@192.168.5.101:1521:demo";
-        _connessione = DriverManager.getConnection(url, "istat", "taxi");
+        String url = "jdbc:oracle:thin:@192.168.5.101:1521:demo", user = "istat", password = "taxi";
+        _connessione = DriverManager.getConnection(url, user, password);
         // Use the Connection to create a Statement object
         _comando = _connessione.createStatement();
     }
