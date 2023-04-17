@@ -8,7 +8,8 @@ public class DBConnect {
         Database _db = new Database();
         _db.connettiDatabase();
         System.out.println("Connessione stabilita!");
-        _rs = _db.eseguiQuery("select count(*) as conta from istat.aggregazioni;") ;
+        _rs = _db.eseguiQuery("select count(*) as conta from istat.aggregazioni") ;
+        _rs.next();
         String name =_rs.getString("conta");
         System.out.println(name);
         _rs.close();
